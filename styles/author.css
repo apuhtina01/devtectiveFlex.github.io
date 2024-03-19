@@ -1,0 +1,57 @@
+
+.author {
+  display: flex;
+  padding: 120px 0;
+  gap: 50px;
+}
+
+.author__photo-container {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 480px;
+  height: 440px;
+  margin: 30px 150px 0 0;
+  box-shadow: 20px -20px 0 10px #000;
+}
+
+.author__photo {
+  position: absolute;
+  transition: all 0.8s ease-in-out;
+}
+
+.author__photo:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.author__content {
+  max-width: 500px;
+}
+
+.author__text {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 40px;
+}
+
+.author__name {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+
+}
+
+.author__job-title {
+  margin: 0;
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 300;
+}

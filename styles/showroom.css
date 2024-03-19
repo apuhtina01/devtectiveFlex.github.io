@@ -65,7 +65,7 @@
 }
 .logo-block {
   padding: 20px;
-  margin-bottom: 90px;
+  margin: 90px 0;
   background-image: url(../img/showeare-parallax.jpg);
   background-repeat: no-repeat;
   background-size: cover;

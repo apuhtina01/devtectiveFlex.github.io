@@ -63,6 +63,10 @@ main {
   margin: 72px 0;
   margin-bottom: 70px;
 }
+section {
+  padding: 90px 0;
+  margin-bottom: 72px;
+}
 
 #q {
   width: 300px;
@@ -375,4 +379,18 @@ input:focus {
 
 .copyrights__item:active {
   opacity: 0.3;
+}
+
+.page-slider {
+  height: 600px;
+  background-image: url(../img/placeholder2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.promo__container{
+  padding: 120px 50px;
+}
+
+.promo__video {
+  width: 100%;
 }
