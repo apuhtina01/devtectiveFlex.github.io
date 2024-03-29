@@ -36,10 +36,10 @@ async function initMap() {
     {
       location: {
         // Координаты центра карты
-        center: mapBaloons[1].coordinates,
+        center: [37.617698, 55.755864],
 
         // Уровень масштабирования
-        zoom: 15
+        zoom: 10
       }
     }
   );
