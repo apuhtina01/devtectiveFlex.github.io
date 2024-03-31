@@ -47,7 +47,9 @@
 }
 
 
-
+html {
+  font-size: 10px;
+}
 body {
   font-family: "Rubik", sans-serif;
   font-weight: 400;

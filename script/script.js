@@ -50,26 +50,57 @@ async function initMap() {
 
   for (let item of cityItems){
    item.onclick = function (){
-   let city = cities.filter(function (city){
+   let city = cities.find(function (city){
       return city.id == item.id
     })
-    map.update({location: {center: city[0].coordinates, zoom: 10}});
+    let cityMarkers = city.markers
+    document.getElementById('markerList').innerHTML = '';
+    for (let marker of cityMarkers) {
+      let markerItem = document.createElement('li')
+      markerItem.classList.add('marker__item')
+
+
+      let title = document.createElement('h2')
+      title.classList.add("marker__title")
+      title.textContent = marker.title
+
+     let subtitle = document.createElement('p')
+    subtitle.classList.add("marker__subtitle")
+    subtitle.textContent = marker.subtitle
+
+    let address = document.createElement('p')
+    address.classList.add("marker__address")
+    address.textContent = marker.address
+
+    let phone = document.createElement('p')
+    phone.classList.add("marker__phone")
+    phone.textContent = marker.phone
+
+    markerItem.append(title)
+    markerItem.append(subtitle)
+    markerItem.append(address)
+    markerItem.append(phone)
+    document.getElementById('markerList').append(markerItem)
+    }
+    map.update({location: {center: city.coordinates, zoom: 10}});
     document.getElementById('map').scrollIntoView ({ block: "center", behavior: "smooth" })
    }
   }
   // Add a default marker with a popup window from the package to the map
-  for (let marker in mapBaloons) {
-  map.addChild(
-    new YMapDefaultMarker({
-      coordinates: mapBaloons[marker].coordinates,
-      color: mapBaloons[marker].color,
-      title: mapBaloons[marker].title,
-      subtitle: mapBaloons[marker].subtitle,
-      popup: { content: mapBaloons[marker].popup.content, position: mapBaloons[marker].popup.position }
-    })
-  )
+  for (let item of cities) {
+    let city = item.markers
+      for (let marker of city){
+    map.addChild(
+      new YMapDefaultMarker({
+        coordinates: marker.coordinates,
+        color: marker.color,
+        title: marker.title,
+        subtitle: marker.subtitle,
+        popup: { content: marker.popup.content, position: marker.popup.position }
+      })
+    )
+    }
   }
 
 }
-
 
