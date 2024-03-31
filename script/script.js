@@ -14,8 +14,8 @@ async function getFile(fileName) {
 }
 let mapCustomization = await getFile('./script/customization.json')
 let mapBaloons = await getFile('./script/map.json')
-let button = document.getElementById('button');
-
+let cities = await getFile('./script/cities.json')
+let cityItems = document.querySelectorAll('.city-item')
 
 initMap();
 
@@ -47,7 +47,16 @@ async function initMap() {
   // Добавляем слой для отображения схематической карты
   map.addChild(new YMapDefaultSchemeLayer({ customization: mapCustomization }))
   map.addChild(new YMapDefaultFeaturesLayer({}))
-  map
+
+  for (let item of cityItems){
+   item.onclick = function (){
+   let city = cities.filter(function (city){
+      return city.id == item.id
+    })
+    map.update({location: {center: city[0].coordinates, zoom: 10}});
+    document.getElementById('map').scrollIntoView ({ block: "center", behavior: "smooth" })
+   }
+  }
   // Add a default marker with a popup window from the package to the map
   for (let marker in mapBaloons) {
   map.addChild(
@@ -60,9 +69,7 @@ async function initMap() {
     })
   )
   }
-  button.onclick = function didIt (a) {
-    map.update({location: {center: [ 39.200296,51.660781], zoom: 10}});
-  }
+
 }
 
 
