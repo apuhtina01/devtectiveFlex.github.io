@@ -1,0 +1,57 @@
+.article__header {
+  
+}
+
+.article__title {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.article__introduction {
+  
+}
+
+.article__subtitle {
+  
+}
+
+.article__paragraph{
+  max-width: 600px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 18px;
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 300;
+  color: rgb(102, 102, 102);
+}
+
+.article__meta {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgb(130, 138, 153);
+}
+
+.article__list {
+  
+}
+
+.article__item {
+  
+}
+.article__image-container {
+  
+}
+
+.article__image {
+  
+}
+
+.article__image-caption {
+  
+}
+
