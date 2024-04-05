@@ -8,6 +8,8 @@
 //   submenu.classList.remove('open'); // Удаляем класс для закрытия блока
 // }
 
+
+setInterval(nextSlide, slideInterval);
 async function getFile(fileName) {
   let jsonValue = await fetch(fileName);
   return await jsonValue.json();
