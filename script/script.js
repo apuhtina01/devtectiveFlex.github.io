@@ -1,26 +1,12 @@
-// function openSubmenu() {
-//   var submenu = document.querySelector('.submenu');
-//   submenu.classList.add('open'); // Добавляем класс для открытия блока
-// }
 
-// function closeSubmenu() {
-//   var submenu = document.querySelector('.submenu');
-//   submenu.classList.remove('open'); // Удаляем класс для закрытия блока
-// }
-
-
-setInterval(nextSlide, slideInterval);
 async function getFile(fileName) {
   let jsonValue = await fetch(fileName);
   return await jsonValue.json();
 }
-let mapCustomization = await getFile('./script/customization.json')
-let mapBaloons = await getFile('./script/map.json')
-let cities = await getFile('./script/cities.json')
-let cityItems = document.querySelectorAll('.city-item')
-let markersList = document.querySelectorAll('.marker__item')
-let isMoscow = false
 
+let mapCustomization = await getFile('./script/customization.json')
+let cities = await getFile('./script/cities.json')
+let isMoscow = false
 initMap();
 
 async function initMap() {
@@ -31,7 +17,15 @@ async function initMap() {
 
   const { YMapClusterer, clusterByGrid } = await ymaps3.import('@yandex/ymaps3-clusterer@0.0.1');
   const { YMapDefaultMarker } = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
-  // Иницилиазируем карту
+  //* Функция принимает на вход параметры маркера и отображает его в сайдбаре
+  function createCityItem(city, id){
+    let cityItem = document.createElement('li')
+    cityItem.classList.add('city-item')
+    cityItem.id = id
+    cityItem.textContent = city
+
+    document.getElementById('cityList').append(cityItem)
+  }
   function createMarkerItem(marker) {
     let markerItem = document.createElement('li')
     markerItem.classList.add('marker__item')
@@ -67,10 +61,10 @@ async function initMap() {
       map.update({ location: { center: marker.coordinates, zoom: 18 } });
     }
   }
+
   const map = new YMap(
     // Передаём ссылку на HTMLElement контейнера
     document.getElementById('map'),
-
     // Передаём параметры инициализации карты
     {
       location: {
@@ -86,8 +80,35 @@ async function initMap() {
   // Добавляем слой для отображения схематической карты
   map.addChild(new YMapDefaultSchemeLayer({ customization: mapCustomization }))
   map.addChild(new YMapDefaultFeaturesLayer({}))
-  for (let item of cityItems) {
-    item.onclick = function () {
+
+  for (let item of cities) {
+    createCityItem(item.city, item.id)
+    let cityMarkers = item.markers
+    //* Вычисляет, когда в обработку цикла попадает город Москва
+    if (item.id == 'msk') { isMoscow = true } else (isMoscow = false)
+
+    //* Добавляет мвркеры каждого города на карту
+    for (let marker of cityMarkers) {
+      if (isMoscow) {
+        createMarkerItem(marker)
+      }
+
+      map.addChild(
+        new YMapDefaultMarker({
+          coordinates: marker.coordinates,
+          color: marker.color,
+          title: marker.title,
+          subtitle: marker.subtitle,
+          onClick: function() {map.properties.get(coordinates)},
+          popup: { content: marker.popup.content, position: marker.popup.position, hidesMArker: true },
+
+        })
+      )
+    }
+  }
+  let cityItems = document.querySelectorAll('.city-item')
+  for (let item of cityItems){
+    item.onclick = function (){
       let city = cities.find(function (city) {
         return city.id == item.id
       })
@@ -101,26 +122,6 @@ async function initMap() {
       document.getElementById('map').scrollIntoView({ block: "center", behavior: "smooth" })
     }
   }
-  // Add a default marker with a popup window from the package to the map
-  for (let item of cities) {
 
-    let city = item.markers
-    if (item.id == 'msk') { isMoscow = true } else (isMoscow = false)
-
-    for (let marker of city) {
-      if (isMoscow) {
-        createMarkerItem(marker)
-      }
-      map.addChild(
-        new YMapDefaultMarker({
-          coordinates: marker.coordinates,
-          color: marker.color,
-          title: marker.title,
-          subtitle: marker.subtitle,
-          popup: { content: marker.popup.content, position: marker.popup.position }
-        })
-      )
-    }
-  }
 }
 
