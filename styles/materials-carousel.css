@@ -1,0 +1,24 @@
+.materials {
+}
+.materials__content {
+}
+.materials-content__title {
+}
+.materials-content__paragraph {
+}
+.materials__carousel {
+display: flex;
+gap: 15px;
+}
+.materials-carousel__item {
+max-width: 250px;
+}
+.materials-carousel__image {
+}
+.materials-carousel__title {
+}
+
+.materials-carousel__wrapper{
+  background-color: black;
+
+}
