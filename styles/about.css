@@ -18,6 +18,13 @@
   border-radius: 10px;
 }
 
+.about-card__image {
+  max-width: 300px
+}
+
+.about-card__image--full-size {
+  width: 100%;
+}
 .about-card__content {}
 
 .about-card__title {
@@ -48,4 +55,28 @@
   margin-bottom: 0;
 }
 
+.about-card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-card__item {
+  margin-bottom: 20px;
+  color: rgb(101, 106, 112);
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.about-card__gallery {
+
+}
+
+.about-card__gallery--flex-tiles {
+  display: flex;
+  justify-content: space-between;
+}
+.about-card__gallery--flex-tiles:nth-child(2n) {
+
+}
 /*!  */

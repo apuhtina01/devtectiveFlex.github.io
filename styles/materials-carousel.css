@@ -23,12 +23,54 @@
 
 .materials__carousel {
   display: flex;
-  gap: 15px;
+  gap: 18px;
+
+}
+.materials__carousel-wrapper {
+  position: relative;
   overflow: hidden;
+}
+.materials-carousel__button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  background-color: #000;
+  opacity: 0.6;
+  z-index: 999;
+  transition: opacity 0.3s ease-in;
+}
+
+.materials-carousel__button--next {
+  top: 50%;
+  right: 0px;
+}
+
+.materials-carousel__button--prev {
+  top: 50%;
+  left: 0;
+}
+
+.materials-carousel__button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.materials__carousel__button::before {
+  content: ">";
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  position: absolute;
+  color: #fff;
+  z-index: 999;
 }
 
 .materials-carousel__item {
-  width: 32%;
+  width: 33%;
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
