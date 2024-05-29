@@ -22,18 +22,16 @@
   color: rgb(59, 66, 81);
 }
 
-.about-card__paragraph {
+.about-card__text {
   margin: 0;
   padding: 0;
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.about-card__text {
   color: rgb(101, 106, 112);
   font-size: 16px;
   line-height: 28px;
+}
+
+.about-card__paragraph {
+  margin-bottom: 20px;
 }
 
 .about-card__image { 
@@ -65,6 +63,6 @@
   justify-content: center;
 }
 
-.about-card__gallery--flex-tiles:nth-child(1){
-  margin-top: 100px;
+.about-card__gallery--chess{
+  height: calc(100% + 250px);
 }
