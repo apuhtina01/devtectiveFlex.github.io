@@ -23,26 +23,26 @@
 }
 
 @font-face {
-  font-family: "Open Sans";
-  src: url(../fonts/OpenSans-Light.ttf);
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat-light.ttf);
   font-weight: 300;
 }
 
 @font-face {
-  font-family: 'Open Sans';
-  src: url(../fonts/OpenSans-Regular.ttf);
+  font-family: 'Montserrat';
+  src: url(../fonts/Montserrat-Regular.ttf);
   font-weight: 400;
 }
 
 @font-face {
-  font-family: "Open Sans";
-  src: url(../fonts/OpenSans-Medium.ttf);
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat-Medium.ttf);
   font-weight: 600;
 }
 
 @font-face {
-  font-family: "Open Sans";
-  src: url(../fonts/OpenSans-Bold.ttf);
+  font-family: "Montserrat";
+  src: url(../fonts/Montserrat-Bold.ttf);
   font-weight: 700;
 }
 
@@ -50,7 +50,7 @@ html {
   font-size: 10px;
 }
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
 }
 
@@ -90,6 +90,7 @@ input:focus {
   position: relative;
   display: flex;
   align-items: center;
+  font-family: 'Rubik';
 }
 
 /* ! LOGO */
@@ -111,7 +112,6 @@ input:focus {
 
 .phone-number {
   font-size: 18px;
-  /* Добавьте дополнительные стили, если необходимо */
 }
 
 .menu {}
@@ -166,27 +166,52 @@ input:focus {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 90%;
-  z-index: 999;
+  z-index: 1000;
 }
 
 .menu__item:hover .submenu {
-  display: block;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: center;
+  vertical-align: center;
 }
 
 .block {
-  width: 200px;
-  height: 100px;
-  background-color: #bd7b7b;
-  margin: 5px;
+  position: relative;
+  width: 32%;
+  border-radius: 10%;
+  background-color: #0c9e94 ;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
 }
 
-.block1 {
-  background-color: green;
+.block-span{
+  position: absolute;
+  font-family: "Montserrat";
+  font-size: 48px;
+  color: #fff;
+  text-shadow: 3px 3px 10px  #000;
+  bottom: 10px;
+  right: 10px;
+}
+
+.block img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5%;
+  object-fit: cover;
+}
+
+.block:hover { 
+  transform: scale(103%);
 }
 
 /** FOOTER */
 
-.page-footer {}
+.page-footer {
+  font-family: "Rubik";
+}
 
 /*! FOOTER-MENU */
 
@@ -382,9 +407,6 @@ input:focus {
   opacity: 0.3;
 }
 
-.page-slider {
-  height: 600px;
-}
 .promo__container{
   padding: 120px 50px;
 }

@@ -24,7 +24,7 @@
 .materials__carousel {
   display: flex;
   gap: 18px;
-
+  transition: all 0.3s ease-in-out;
 }
 .materials__carousel-wrapper {
   position: relative;
@@ -70,7 +70,7 @@
 }
 
 .materials-carousel__item {
-  width: 33%;
+  width: calc(100%/3 + -12px);
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
