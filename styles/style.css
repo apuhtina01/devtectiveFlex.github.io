@@ -65,7 +65,6 @@ main {
   margin-bottom: 70px;
 }
 section {
-  padding: 90px 0;
   margin-bottom: 72px;
 }
 
@@ -408,7 +407,7 @@ input:focus {
 }
 
 .promo__container{
-  padding: 120px 50px;
+
 }
 
 .promo__video {

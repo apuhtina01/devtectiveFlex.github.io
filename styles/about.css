@@ -19,7 +19,8 @@
 }
 
 .aboutus__wrapper--small {
-    max-width: 350px;
+    width: 350px;
+    min-width: 350px;
 }
 
 .--shadowed {
@@ -38,8 +39,10 @@
 }
 .statistics__list {
     display: flex;
+    justify-content: center;
     gap: 20px;
     margin: 0;
+    margin-bottom: 50px;
     padding: 0;
     list-style: none;
 }
@@ -54,3 +57,28 @@
 p.large-text{
     font-size: 20px;
 }
+
+.logo-block {
+    width: 100%;
+    padding: 20px;
+    margin: 90px 0;
+    background-image: url(../img/showeare-parallax.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .logo-block__slogan {
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-size: 17px;
+    color: #fff;
+  }
+  
+  .logo-block div {
+    display: flex;
+    margin: auto;
+    width: fit-content;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
