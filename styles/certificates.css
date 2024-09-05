@@ -20,9 +20,8 @@
     justify-content: center;
 }
 
-.certificate:hover .certificate-photo {
-    filter: blur(5px);
-    transition: all 0.1s ease-in-out;
+.certificate:hover {
+    cursor: pointer;
 }
 .certificate {
     width:fit-content;

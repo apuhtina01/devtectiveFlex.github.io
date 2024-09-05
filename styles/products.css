@@ -1,6 +1,7 @@
 .product-preview{
   width: 1360px;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 .product-preview__title {
@@ -33,7 +34,7 @@ margin-bottom: 0;
 }
 .preview-card_title {
   font-weight: 600;
-  font-size: 40px;
+  font-size: 34px;
   line-height: 48px;
   color: #292B33;
   margin: 0;
@@ -61,6 +62,7 @@ margin-bottom: 0;
 
 .preview-card__desc {
   max-width: 390px;
+  height: 45px;
   font-size: 16px;
   line-height: 22px;
   font-weight: 400;
@@ -84,4 +86,26 @@ margin-bottom: 0;
 
 .preview-card__button:hover {
   color: #2844a6;
+}
+
+.rigidity {
+
+}
+.ridigity-scale {
+display: flex;
+padding: 0;
+margin: 0;
+margin-bottom: 20px;
+gap: 5px;
+list-style: none;
+}
+.ridigity-point {
+width: 25px;
+height: 25px;
+border: 1px solid #f28109;
+border-radius: 20px;
+}
+
+.filled{
+  background-color: #f28109;
 }

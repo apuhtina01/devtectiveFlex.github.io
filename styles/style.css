@@ -413,3 +413,10 @@ input:focus {
 .promo__video {
   width: 100%;
 }
+
+.caption{
+  padding-left: 5px;
+  font-size: 11px;
+  align-content: center;
+  color: #656a70;
+}
