@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: "Montserrat";
 }
@@ -24,6 +27,7 @@ body {
 }
 
 .coop-card h3 {
+  height: 52px;
   font-size: 24px;
   font-weight: 600;
   line-height: 26px;
@@ -82,7 +86,7 @@ body {
 
 .hero-container h1 {
   position: absolute;
-  top: 25%;
+  top: 30%;
   left: 5%;
   width: 500px;
   color: #fff;
@@ -91,7 +95,7 @@ body {
 
 .coop__list {
   position: absolute;
-  bottom: 5%;
+  top: 3%;
   right: 5%;
   display: flex;
   flex-wrap: wrap;
@@ -106,6 +110,20 @@ body {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
+.coop__item a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
 .coop__item:hover {
-  transform: translateY(-10px);
+  transform: translateY(10px);
+}
+
+.bg-logo {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 200px;
+  height: 200px;
+  background-image: url(/img/logo.svg);
 }
